@@ -1,0 +1,119 @@
+$breakpoint-tablet: 1200px;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    background-color: #413963;
+    font-family: "Road Rage", cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (min-width: $breakpoint-tablet) {
+    body {
+        padding: 0 20%;
+    }
+}
+
+img {
+    filter: drop-shadow(-5px -5px 0px #fff);
+}
+
+.timeline {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%);
+    border: 2px solid red;
+    padding-bottom: 50rem;
+
+    .path {
+        border: 2px solid red;
+
+        path#curve {
+            fill: none;
+            stroke: #fff;
+            stroke-width: 2;
+            stroke-dasharray: 5, 5;
+        }
+    }
+
+    #arrow {
+        border: 2px solid red;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        // transform: translate(40px, 0px) rotate(90deg);
+    }
+}
+
+.title {
+    margin-top: 2rem;
+    font-size: 6rem;
+    color: black;
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+
+    &::before {
+        content: "A VIDA DE UMA MOSKA";
+        color: white;
+        position: absolute;
+        transform: translate(-10px, -10px);
+    }
+}
+
+.cabec {
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+
+    img.boca {
+        position: absolute;
+        animation: anim-boca 0.4s ease 0s infinite alternate;
+        filter: none;
+    }
+
+    @keyframes anim-boca {
+        0% {
+            transform: translate(0, 0);
+        }
+        25% {
+            transform: translate(0, 0);
+        }
+        50% {
+            transform: translate(-2px, 15px);
+        }
+        75% {
+            transform: translate(0, 0);
+        }
+        100% {
+            transform: translate(-2px, 15px);
+        }
+    }
+}
+
+.amigos {
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+
+    span {
+        padding: 2rem;
+        font-size: 3rem;
+        display: flex;
+        align-items: center;
+    }
+    img {
+        padding-left: 6rem;
+        width: 50%;
+    }
+}

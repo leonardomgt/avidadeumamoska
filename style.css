@@ -1,0 +1,174 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: white;
+}
+
+body {
+  background-color: #413963;
+  font-family: "Road Rage", cursive;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (min-width: 1200px) {
+  body {
+    padding: 0 20%;
+  }
+}
+
+img {
+  -webkit-filter: drop-shadow(-5px -5px 0px #fff);
+          filter: drop-shadow(-5px -5px 0px #fff);
+}
+
+.timeline {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  border: 2px solid red;
+  padding-bottom: 50rem;
+}
+
+.timeline .path {
+  border: 2px solid red;
+}
+
+.timeline .path path#curve {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-dasharray: 5, 5;
+}
+
+.timeline #arrow {
+  border: 2px solid red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+}
+
+.title {
+  margin-top: 2rem;
+  font-size: 6rem;
+  color: black;
+  border: 2px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.title::before {
+  content: "A VIDA DE UMA MOSKA";
+  color: white;
+  position: absolute;
+  -webkit-transform: translate(-10px, -10px);
+          transform: translate(-10px, -10px);
+}
+
+.cabec {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 3rem;
+}
+
+.cabec img.boca {
+  position: absolute;
+  -webkit-animation: anim-boca 0.4s ease 0s infinite alternate;
+          animation: anim-boca 0.4s ease 0s infinite alternate;
+  -webkit-filter: none;
+          filter: none;
+}
+
+@-webkit-keyframes anim-boca {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  50% {
+    -webkit-transform: translate(-2px, 15px);
+            transform: translate(-2px, 15px);
+  }
+  75% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-2px, 15px);
+            transform: translate(-2px, 15px);
+  }
+}
+
+@keyframes anim-boca {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  50% {
+    -webkit-transform: translate(-2px, 15px);
+            transform: translate(-2px, 15px);
+  }
+  75% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-2px, 15px);
+            transform: translate(-2px, 15px);
+  }
+}
+
+.amigos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 5rem;
+}
+
+.amigos span {
+  padding: 2rem;
+  font-size: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.amigos img {
+  padding-left: 6rem;
+  width: 50%;
+}
+/*# sourceMappingURL=style.css.map */
