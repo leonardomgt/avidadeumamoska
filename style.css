@@ -21,7 +21,7 @@ body {
           justify-content: center;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   body {
     padding: 0 20%;
   }
@@ -32,39 +32,15 @@ img {
           filter: drop-shadow(-5px -5px 0px #fff);
 }
 
-.timeline {
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  border: 2px solid red;
-  padding-bottom: 50rem;
-}
-
-.timeline .path {
-  border: 2px solid red;
-}
-
-.timeline .path path#curve {
-  fill: none;
-  stroke: #fff;
-  stroke-width: 2;
-  stroke-dasharray: 5, 5;
-}
-
-.timeline #arrow {
-  border: 2px solid red;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50px;
+span {
+  -webkit-filter: drop-shadow(8px 8px 0px #000);
+          filter: drop-shadow(8px 8px 0px #000);
 }
 
 .title {
   margin-top: 2rem;
-  font-size: 6rem;
-  color: black;
+  font-size: 3rem;
+  color: white;
   border: 2px solid red;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -72,17 +48,26 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
+  -webkit-filter: drop-shadow(10px 10px 0px #000);
+          filter: drop-shadow(10px 10px 0px #000);
 }
 
-.title::before {
-  content: "A VIDA DE UMA MOSKA";
-  color: white;
-  position: absolute;
-  -webkit-transform: translate(-10px, -10px);
-          transform: translate(-10px, -10px);
+@media (min-width: 768px) {
+  .title {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .title {
+    font-size: 6rem;
+  }
 }
 
 .cabec {
+  -ms-flex-item-align: center;
+      align-self: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -90,6 +75,14 @@ img {
       -ms-flex-pack: center;
           justify-content: center;
   padding-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.cabec img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  border: 2px solid red;
+  max-width: 80vw;
 }
 
 .cabec img.boca {
@@ -146,29 +139,157 @@ img {
   }
 }
 
-.amigos {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 5rem;
+.timeline {
+  position: absolute;
+  top: 80vh;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  padding-bottom: 50rem;
 }
 
-.amigos span {
-  padding: 2rem;
-  font-size: 3rem;
+.timeline #mover {
+  -webkit-filter: drop-shadow(-5px -5px 0px #fff);
+          filter: drop-shadow(-5px -5px 0px #fff);
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  position: absolute;
+  motion-rotation: reverse;
+}
+
+.timeline #mover img {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.timeline #mover .head {
+  width: 71px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.timeline #mover .wing-l,
+.timeline #mover .wing-r {
+  width: 71px;
+}
+
+.timeline #mover .wing-l {
+  -webkit-animation: wing-l 0.2s linear 0s infinite alternate;
+          animation: wing-l 0.2s linear 0s infinite alternate;
+  -webkit-transform-origin: center right;
+          transform-origin: center right;
+}
+
+.timeline #mover .wing-r {
+  -webkit-animation: wing-r 0.2s linear 0s infinite alternate;
+          animation: wing-r 0.2s linear 0s infinite alternate;
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+}
+
+@-webkit-keyframes wing-l {
+  0% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  100% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+}
+
+@keyframes wing-l {
+  0% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  100% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+}
+
+@-webkit-keyframes wing-r {
+  0% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  100% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+}
+
+@keyframes wing-r {
+  0% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  100% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+}
+
+.timeline path#curve {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-dasharray: 5, 5;
+}
+
+.section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 10rem;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.section span {
+  font-size: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  border: 2px solid green;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
 }
 
-.amigos img {
-  padding-left: 6rem;
-  width: 50%;
+.section img {
+  border: 2px solid blue;
+  width: 100%;
+}
+
+.section .wrapper {
+  border: 2px solid blue;
+  position: relative;
+}
+
+.section .siren {
+  position: absolute;
+  left: 23%;
+  top: 10%;
+  width: 100px;
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+
+.section .fogo {
+  -webkit-filter: none;
+          filter: none;
+  position: absolute;
+  left: 17%;
+  top: 35%;
+  width: 100px;
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
 }
 /*# sourceMappingURL=style.css.map */

@@ -15,8 +15,7 @@
         <script src="script.js" defer></script>
     </head>
     <body>
-        <div class="timeline">
-            <svg
+        <!-- <svg
                 class="path"
                 width="145"
                 height="1622"
@@ -31,9 +30,41 @@
                     stroke-width="3"
                     stroke-linecap="round"
                 />
+            </svg> -->
+        <!-- <svg
+                class="path"
+                width="146"
+                height="3240"
+                viewBox="0 0 146 3240"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <rect width="146" height="3240" fill="none" />
+                <g>
+                    <path
+                        id="curve"
+                        stroke="black"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                    />
+                </g>
             </svg>
-
-            <img id="arrow" src="public/pointer.png" alt="" />
+ -->
+        <div class="timeline">
+            <div id="mover">
+                <img class="wing-l" src="public/wing-l.png" alt="" />
+                <img class="wing-r" src="public/wing-r.png" alt="" />
+                <img class="head" src="public/pointer.png" alt="" />
+            </div>
+            <svg
+                width="146"
+                height="3240"
+                viewBox="0 0 146 3240"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path id="curve" stroke="black" stroke-width="3" stroke-linecap="round" />
+            </svg>
         </div>
 
         <h1 class="title">A VIDA DE UMA MOSKA</h1>
@@ -42,9 +73,35 @@
             <img class="boca" src="public/mosca-b.png" alt="" />
         </div>
 
-        <div class="amigos">
+        <div class="section">
             <span>Moska faz macacadas com os amigos CANSAAAADOS...!</span>
             <img src="public/amigos.png" alt="" />
+        </div>
+
+        <div class="section">
+            <img src="public/musculos.png" alt="" />
+            <span>Moska mostra os seus inigualáveis músculos 💪</span>
+        </div>
+
+        <div class="section">
+            <span>Moska delicia-se com o seu Scotch!</span>
+            <img src="public/whiskey.png" alt="" />
+        </div>
+
+        <div class="section">
+            <div class="wrapper">
+                <img src="public/churrasco.png" alt="" />
+                <img class="fogo" src="public/fogo.gif" alt="" />
+            </div>
+            <span>Moska mostra como se põe uma KASAARDER... #biraafrebracaralho</span>
+        </div>
+
+        <div class="section">
+            <span>Moska diverte-se a imitar ambulâncias</span>
+            <div class="wrapper">
+                <img src="public/guitarra.png" alt="" />
+                <img class="siren" src="public/siren.gif" alt="" />
+            </div>
         </div>
     </body>
 </html>

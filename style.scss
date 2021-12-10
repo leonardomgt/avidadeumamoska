@@ -1,4 +1,5 @@
-$breakpoint-tablet: 1200px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1200px;
 
 * {
     padding: 0;
@@ -25,56 +26,52 @@ img {
     filter: drop-shadow(-5px -5px 0px #fff);
 }
 
-.timeline {
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%);
-    border: 2px solid red;
-    padding-bottom: 50rem;
-
-    .path {
-        border: 2px solid red;
-
-        path#curve {
-            fill: none;
-            stroke: #fff;
-            stroke-width: 2;
-            stroke-dasharray: 5, 5;
-        }
-    }
-
-    #arrow {
-        border: 2px solid red;
-
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50px;
-        // transform: translate(40px, 0px) rotate(90deg);
-    }
+span {
+    filter: drop-shadow(8px 8px 0px #000);
 }
 
 .title {
     margin-top: 2rem;
-    font-size: 6rem;
-    color: black;
+    font-size: 3rem;
+    color: white;
     border: 2px solid red;
     display: flex;
     justify-content: center;
+    width: 100%;
+    filter: drop-shadow(10px 10px 0px #000);
 
-    &::before {
-        content: "A VIDA DE UMA MOSKA";
-        color: white;
-        position: absolute;
-        transform: translate(-10px, -10px);
+    // &::before {
+    //     content: "A VIDA DE UMA MOSKA";
+    //     color: white;
+    //     position: absolute;
+    //     transform: translate(-10px, -10px);
+    // }
+
+    @media (min-width: $breakpoint-tablet) {
+        & {
+            font-size: 5rem;
+        }
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        & {
+            font-size: 6rem;
+        }
     }
 }
 
 .cabec {
+    align-self: center;
     display: flex;
     justify-content: center;
     padding-top: 3rem;
+    margin-bottom: 5rem;
+
+    img {
+        object-fit: contain;
+        border: 2px solid red;
+        max-width: 80vw;
+    }
 
     img.boca {
         position: absolute;
@@ -101,19 +98,112 @@ img {
     }
 }
 
-.amigos {
-    display: flex;
-    justify-content: space-between;
-    gap: 5rem;
+.timeline {
+    position: absolute;
+    top: 80vh;
+    left: 50%;
+    transform: translate(-50%);
+    padding-bottom: 50rem;
+
+    #mover {
+        filter: drop-shadow(-5px -5px 0px #fff);
+
+        transform: rotate(-90deg);
+        position: absolute;
+        motion-rotation: reverse;
+
+        img {
+            filter: none;
+        }
+
+        .head {
+            width: 71px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .wing-l,
+        .wing-r {
+            width: 71px;
+        }
+
+        .wing-l {
+            animation: wing-l 0.2s linear 0s infinite alternate;
+            transform-origin: center right;
+        }
+
+        .wing-r {
+            animation: wing-r 0.2s linear 0s infinite alternate;
+            transform-origin: center left;
+        }
+
+        @keyframes wing-l {
+            0% {
+                transform: rotate(-30deg);
+            }
+            100% {
+                transform: rotate(30deg);
+            }
+        }
+
+        @keyframes wing-r {
+            0% {
+                transform: rotate(30deg);
+            }
+            100% {
+                transform: rotate(-30deg);
+            }
+        }
+    }
+
+    path#curve {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 2;
+        stroke-dasharray: 5, 5;
+    }
+}
+
+.section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10rem;
+    margin-bottom: 5rem;
+    position: relative;
 
     span {
-        padding: 2rem;
-        font-size: 3rem;
+        font-size: 5rem;
         display: flex;
+        border: 2px solid green;
         align-items: center;
+        text-align: center;
     }
     img {
-        padding-left: 6rem;
-        width: 50%;
+        border: 2px solid blue;
+        width: 100%;
+    }
+
+    // Specific
+    .wrapper {
+        border: 2px solid blue;
+        position: relative;
+    }
+
+    .siren {
+        position: absolute;
+        left: 23%;
+        top: 10%;
+        width: 100px;
+        transform: rotate(10deg);
+    }
+    .fogo {
+        filter: none;
+        position: absolute;
+        left: 17%;
+        top: 35%;
+        width: 100px;
+        transform: rotate(10deg);
     }
 }
