@@ -33,6 +33,37 @@ window.addEventListener("scroll", () => {
     }
 })
 
+const timeline = document.querySelector(".timeline");
+const content = document.querySelector(".content");
+const maxWidth = 1200;
+
+const timelineBaseHeight = timeline.getBoundingClientRect().height
+
+const calcScale = () => 1.05 * content.getBoundingClientRect().height / timelineBaseHeight
+
+const adjustTimelineScale = () => {
+    // debugger
+    timeline.style.transform = `translate(-50%) scale(${calcScale()})`
+}
+
+adjustTimelineScale(calcScale());
+
+window.addEventListener('resize', adjustTimelineScale);
+window.addEventListener('load', adjustTimelineScale);
+// transform: translate(-50%) scale(0.4, 0.4);
+
+// @media (min-width: $breakpoint-tablet) {
+//     & {
+//         transform: translate(-50%) scale(0.8, 0.8);
+//     }
+// }
+
+// @media (min-width: $breakpoint-desktop) {
+//     & {
+//         transform: translate(-50%) scale(1, 1);
+//     }
+// }
+
 
 // ============================================================
 
